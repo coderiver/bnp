@@ -49,7 +49,7 @@ head.ready(function() {
 
 	$('.js-share').click(function(event) {
 		var _this = $(this);
-		_this.toggleClass('is-white-bg');
+		// _this.toggleClass('is-white-bg');
 		_this.siblings('.pick__socials-list').toggleClass('is-runsociallist');
 	});
 

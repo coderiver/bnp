@@ -24,7 +24,7 @@
 			&:last-child 
 				margin-right: 0
 			.item__picture
-				height: 375px
+				height: 375px + 20px
 			.item__check
 				&:before
 					bottom: 99px				
@@ -35,7 +35,8 @@
 			&:last-child
 				margin-right: 0
 			.item__picture
-				height: 520px
+				height: 520px + 20px
+				
 			.item__check
 				&:before
 					bottom: 148px
@@ -43,7 +44,7 @@
 	&.items_4
 		.item
 			.item__picture
-				height: 275px
+				height: 275px + 20px
 .close-item-icon	
 	position: absolute
 	display: block
@@ -60,7 +61,7 @@
 	box-shadow: 0 0 10px rgba(#000,.4)
 	background: #fff
 	position: relative
-	padding-bottom: 69px
+	padding-bottom: 69px - 20px
 	margin-bottom: 20px
 	&.item_comments
 		position: relative
@@ -96,9 +97,9 @@
 		position: relative
 	.item__picture
 		height: 420px
-		-webkit-background-size: contain
-		-o-background-size: contain
-		background-size: contain
+		-webkit-background-size: cover
+		-o-background-size: cover
+		background-size: cover
 		background-position: 50% 50%
 		background-repeat: no-repeat
 		position: relative
@@ -155,7 +156,7 @@
 		z-index: 20
 		left: 50%
 		margin-left: -85px
-		top: 56px  
+		top: 53px  
 		display: none 
 		cursor: pointer
 		i
@@ -218,13 +219,17 @@
 			content: ' '
 			+s(choicemade)
 			z-index: 200
+			transform: scale(.5)
+			transform-origin: 100% 0
+			.popup &
+				transform: scale(1)
 	.item__text
 		position: absolute
 		bottom: 0
 		left: 0
 		right: 0
 		background: #fff
-		height: 71px
+		height: 51px
 		font-size: 15px
 		color: #535353
 		padding: 6px 13px 0 13px
@@ -447,6 +452,8 @@
 		font-size: 25px
 		height: 42px
 		line-height: 42px
+		+r(1200)
+			font-size: 20px 
 		&:last-child
 			margin-right: 0 
 	.votes
@@ -482,7 +489,7 @@
 	.icon-494
 		position: absolute
 		top: 1px
-		right: 4px
+		right: 7px
 		// width: 34px
 		// height: 34px
 		font-size: 29px
@@ -505,9 +512,13 @@
 		.pick__socials-list
 			position: absolute
 			top: 1px
-			+translateX(130%)
-			transition: all .6s linear
+			+translateX(20px)
+			transition: all .2s linear
 			z-index: 1
+			opacity: 0
+			visibility: hidden
+			
+			 
 			.pick__social
 				display: inline-block
 				margin-right: 1px
@@ -525,24 +536,21 @@
 					opacity: 1		
 			.social-fb
 				+s(m-fb)
-				left: -240px				
 			.social-tw
-				left: -200px				
 				+s(m-tw)
 			.social-pi
-				left: -160px			
 				+s(m-pin)
 			.social-gl
-				left: -120px				
 				+s(m-g)
 			.social-ml
-				left: -80px			
 				+s(m-mail)
-			.social-ch	
-				left: -40px			
+			.social-ch		
 				+s(m-chain)		
 		.is-runsociallist
-			+translateX(8%)
+			+translateX(0)
+			opacity: 1
+			visibility: visible
+			 
 		.item__picture:after
 			opacity: 1	
 	.pick__fave
@@ -588,22 +596,23 @@
 	right: 20px
 	bottom: 55px
 	border-radius: 50%
-	+s(add-comment)
+	+s(gray_plus)
 	cursor: pointer
 	z-index: 100 
 	&:hover
-		+s(add-comment-hover)
+		// +s(add-comment-hover)
+		opacity: .8 
 	&_header
 		position: absolute
 		left: 50% 
-		top: 0
-		margin-left: -39px  
+		top: 5px
+		margin-left: -33px  
 		right: auto
 		bottom: auto
 		transition: transform .2s linear
 		.is-small &
 			transform: scale(.6)
-			top: -13px 
+			top: -8px 
 // .icon-505
 // 	position: absolute
 // 	top: 6px
@@ -639,7 +648,7 @@
 	padding-top: 12px
 	padding-left: 15px
 	padding-right: 35px
-	padding-bottom: 25px
+	padding-bottom: 4px
 	.add-vote, .add-report
 		position: relative
 		top: 0
@@ -862,7 +871,7 @@
 			color: #767676 
 			margin-bottom: 35px 
 		p
-			font-size: 14px
+			font-size: 16px
 			color: #535353 
 	&__icon
 		min-height: 105px 
@@ -870,6 +879,8 @@
 		.howitworks__#{$s} i
 			+s(#{$s})
 			display: inline-block
+			padding-bottom: 2px 
+			height: 74px 
 @keyframes loader
 	0%
 		background-position: -1000px 0
@@ -903,3 +914,24 @@
 		animation-fill-mode: both
 		background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%)
 		background-size: 1000px 100%
+.pick__login
+	position: absolute
+	left: 0
+	top: 0
+	padding-top: 15px 
+	padding-right: 35px 
+	font-size: 16px 
+	color: #767676 
+	line-height: 1.3 
+	z-index: 100 
+	left: 45px 
+	top: -30px 
+	padding-left: 36px 
+	background-image: inline-image('bubble.png','image/png')
+	background-size: contain
+	background-repeat: no-repeat
+	width: 252px 
+	height: 108px 
+	a
+		color: #4f94b6 
+		text-decoration: none
