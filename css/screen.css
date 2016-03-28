@@ -1971,6 +1971,16 @@ body { padding-top: 70px; padding-bottom: 150px; }
 .getcomment .icon-268 { position: absolute; top: 5px; right: 0; font-size: 30px; color: #c4c4c4; }
 .getcomment__text { display: block; width: 100%; padding: 4px 15px 3px; font-family: Comfortaa, sans-serif; font-size: 25px; line-height: normal; color: #d0d0d0; background: #f7f7f7; }
 
+.rel_1_of_2:after { left: calc(25% - 12px); }
+.rel_2_of_2:after { left: calc(75% - 12px); }
+.rel_1_of_3:after { left: calc(16.65% - 12px); }
+.rel_2_of_3:after { left: calc(50% - 12px); }
+.rel_3_of_3:after { left: calc(83.35% - 12px); }
+.rel_1_of_4:after { left: calc(12.5% - 12px); }
+.rel_2_of_4:after { left: calc(37.5% - 12px); }
+.rel_3_of_4:after { left: calc(62.5% - 12px); }
+.rel_4_of_4:after { left: calc(87.5% - 12px); }
+
 .report { position: absolute; top: -52px; right: 65px; display: inline-block; width: 150px; padding: 10px 5px 40px 10px; border: 2px solid #b9b9b9; background: #fff; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3); z-index: 100; }
 
 .form { position: relative; }
