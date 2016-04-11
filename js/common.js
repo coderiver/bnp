@@ -82,4 +82,9 @@ head.ready(function() {
 	$('.js-login').click(function(event) {
 		$('.js-login-drop').toggleClass('is-open');
 	});
+	$('.item__zoom').click(function(event) {
+		event.preventDefault();
+		$('.js-popup').fadeIn();
+		return false;
+	});
 });
