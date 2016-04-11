@@ -33,6 +33,7 @@ head.ready(function() {
 			    // $(this).parents('.pick').addClass('is-votedone');
 			    // $(this).parents('.pick').addClass('is-finished');
 			    alert('animation finished');
+			    $(this).closest('.pick').next().slideDown();
 			});
         }
     });
