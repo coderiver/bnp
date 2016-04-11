@@ -32,7 +32,7 @@ head.ready(function() {
 			    // callback goes here
 			    // $(this).parents('.pick').addClass('is-votedone');
 			    // $(this).parents('.pick').addClass('is-finished');
-			    alert('animation finished');
+			    console.log('animation finished');
 			    $(this).closest('.pick').next().slideDown();
 			});
         }
@@ -48,10 +48,13 @@ head.ready(function() {
 
 
 
-	$('.js-share').click(function(event) {
-		var _this = $(this);
-		// _this.toggleClass('is-white-bg');
-		_this.siblings('.pick__socials-list').toggleClass('is-runsociallist');
+	$('.js-share').hover(function(event) {
+		$(this).siblings('.pick__socials-list').addClass('is-runsociallist');
+	},function(){
+	});
+	$('.pick__socials').hover(function() {
+	}, function() {
+		$(this).find('.pick__socials-list').removeClass('is-runsociallist');
 	});
 
 	$(window).scroll(function () {
